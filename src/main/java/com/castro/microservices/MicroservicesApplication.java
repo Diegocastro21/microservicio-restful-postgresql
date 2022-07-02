@@ -14,6 +14,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class MicroservicesApplication {
 
+
+	/*
+	* me genera problema si no aplico en el arhivo
+	* application.properties lo siguiente
+	* spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+	* el error presentado era este
+	* Failed to start bean 'documentationPluginsBootstrapper';
+	*  nested exception is java.lang.NullPointerException: Cannot invoke
+	* "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.toString()"
+	*  because the return value of
+	* "springfox.documentation.spi.service.contexts.Orderings.patternsCondition(springfox.documentation.RequestHandler)" is null
+	* */
 	@Bean
 	public Docket schoolApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
